@@ -3,9 +3,9 @@ from collections import namedtuple
 __Mirror = namedtuple("Mirror", ("name", "search", "lookup"))
 
 MIRRORS = {
-    "libgen.io": __Mirror(
-        "libgen.io",
-        "http://libgen.io/search.php"
+    "gen.lib.rus.ec": __Mirror(
+        "gen.lib.rus.ec",
+        "http://gen.lib.rus.ec/search.php"
         "?req={req}"
         "&page={page}"
         "&res={per_page}"
@@ -14,12 +14,12 @@ MIRRORS = {
         "&view={view}"
         "&open={open}"
         "&phrase={phrase}",
-        "http://libgen.io/json.php" "?ids={ids}" "&fields={fields}",
+        "http://gen.lib.rus.ec/json.php" "?ids={ids}" "&fields={fields}",
     ),
     # TODO gen.lib.rus.ec support
 }
 
-DEFAULT_MIRROR = "libgen.io"
+DEFAULT_MIRROR = "gen.lib.rus.ec"
 
 # these query parameters for mirror/search.php are pinned.
 SEARCH_BASE_PARAMS = {
@@ -43,7 +43,7 @@ SEARCH_MODES = ("title", "author", "isbn")
 SEARCH_RESULTS_PER_PAGE = (25, 50, 100)
 
 FILEHOST_URLS = {
-    "libgen.io": "http://libgen.io/ads.php?md5={md5}",
+    "gen.lib.rus.ec": "http://gen.lib.rus.ec/ads.php?md5={md5}",
     # currently unresolvable with 8.8.8.8, but works on quad9 and cloudflare
     #    "ambry.pw": "https://ambry.pw/item/detail/id/{id}",
     "library1.org": "http://library1.org/_ads/{md5}",
@@ -51,7 +51,7 @@ FILEHOST_URLS = {
     "bookfi.net": "http://bookfi.net/md5/{md5}",
 }
 
-DEFAULT_FILEHOST = "libgen.io"
+DEFAULT_FILEHOST = "gen.lib.rus.ec"
 
 DEFAULT_BOOK_FIELDS = [
     "title",
